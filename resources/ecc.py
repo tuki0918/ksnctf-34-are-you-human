@@ -114,6 +114,7 @@ def ecc(data):
 
     return "".join(map(chr, P.toarray()))
 
+# flag.jpg
 D = open(sys.argv[1], "rb").read()
 D += "\x00"*((K-len(D))%K)
 
@@ -130,4 +131,5 @@ for _ in range(len(T)/100):
     T[random.randint(0,len(T)-1)] = random.randint(0,255)
 T = "".join(map(chr, T))
 
+# flag_ecc.jpg
 open(sys.argv[2], "wb").write(T)
